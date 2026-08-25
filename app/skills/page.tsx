@@ -22,15 +22,19 @@ export default function Skills() {
   const skills = [
     {
       category: "Programming Languages",
-      items: ["JavaScript", "TypeScript", "Python", "Java", "C++"]
+      items: ["Python", "SQL", "C++", "C", "Java", "TypeScript", "Dart", "JavaScript"]
     },
     {
-      category: "Web Development",
-      items: ["React", "Next.js", "Node.js", "HTML/CSS", "Tailwind CSS"]
+      category: "Frameworks & Libraries",
+      items: ["React", "Next.js", "Node.js", "FastAPI", "Flutter", "PyTorch Geometric", "scikit-learn", "XGBoost", "HTML/CSS", "Tailwind CSS"]
+    },
+    {
+      category: "Database",
+      items: ["PostgreSQL", "MongoDB", "Firebase"]
     },
     {
       category: "Tools & Technologies",
-      items: ["Git", "Docker", "VS Code", "Figma", "Adobe Creative Suite"]
+      items: ["Google Cloud", "Docker", "Git", "VS Code", "Figma", "Adobe Creative Suite"]
     },
     {
       category: "Engineering Skills",
@@ -132,7 +136,7 @@ export default function Skills() {
                 <p className="text-gray-400 text-sm mb-3">Since March 2024</p>
                 <div className="space-y-2">
                   <p className="text-gray-300">CGPA: <span className="text-white font-normal">3.56</span></p>
-                  <p className="text-gray-300">Dean&apos;s List: <span className="text-white font-normal">Semester 1, Semester 2</span></p>
+                  <p className="text-gray-300">Dean&apos;s List: <span className="text-white font-normal">Semester 1 (GPA 4.00), Semester 2 (GPA 3.82)</span></p>
                 </div>
               </div>
               </motion.div>
@@ -158,7 +162,7 @@ export default function Skills() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="text-sm sm:text-base md:text-lg text-white mb-2">GCE O/L (2019)</h4>
-                    <p className="text-gray-300">Obtained <span className="text-white font-normal">9 As</span></p>
+                    <p className="text-gray-300">Obtained <span className="text-white font-normal">9 As</span> (including Tamil)</p>
                   </div>
                   
                   <div>

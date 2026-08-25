@@ -6,18 +6,20 @@ import FadeInSection from '@/components/FadeInSection';
 export default function Projects() {
   const projects = [
     {
-      title: "CoupleCore relationship helper",
-      problem: "This is a system that helps to keep relationships more easier.",
+      title: "CoupleCore",
+      problem: "Relationship companion app whose core innovation is an AI problem-solving tool that learns from each couple's own history of past issues and resolutions to generate tailored, context-aware guidance.",
       features: [
-        "Daily mood tracker", 
-        "Share Calender",
-        "AI powered solution maker"
+        "AI problem-solving tool personalized to each couple",
+        "Learns from each couple's history of past issues and resolutions",
+        "Context-aware, tailored guidance generation",
+        "Firebase Cloud Functions backend with LLM integration"
       ],
-      techStack: "React, Vite, TailwindCSS, Node.js, Express, FastAPI, Python, scikit-learn, MongoDB",
-      liveLink: null, // Update with your actual Vercel URL
-      githubLink: null, // Update with your actual GitHub URL
+      techStack: "Flutter, Firebase, Cloud Functions, LLM Integration",
+      liveLink: null,
+      githubLink: "https://github.com/bkpdesilva/proj-couplecore",
       linkedinLink: null,
-      status: "In Progress"
+      status: "In Progress",
+      type: "Individual"
     },
     {
       title: "CoupleCoreAI",
@@ -52,18 +54,84 @@ export default function Projects() {
     },
     {
       title: "B-Trust MBMS",
-      problem: "Developing a secure, high integrity DBMS for microbanking operations with automated financial logic and role based access.",
+      problem: "Designed and implemented a PostgreSQL-based micro-banking system with automated interest calculations, ACID-compliant transactions and role-based access control.",
       features: [
         "Role-driven dashboards (Admin, Manager, Agent)",
         "Automated interest accrual for Savings and FD via scheduled jobs",
-        "Real-time transaction analytics and reporting views",
-        "Comprehensive audit logging and database-level triggers"
+        "ACID-compliant transactions and role-based access control",
+        "REST APIs with optimized, indexed database queries"
       ],
-      techStack: "PostgreSQL, Express.js, React, Node.js (PERN), TypeScript, CSS",
+      techStack: "PostgreSQL, Express.js, React, Node.js, TypeScript",
       liveLink: null,
       githubLink: "https://github.com/microbanking-system/DBMS_Microbanking_System",
       linkedinLink: "https://www.linkedin.com/posts/praveen-de-silva-854a732a2_webdev-dbms-ts-activity-7410811630453874688--ZWZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEkg6AABOq2dXdWOGUX3vzM4-Jm8Pzn8mAg",
-      status: "Completed"
+      status: "Completed",
+      type: "Group"
+    },
+    {
+      title: "EcoEYE - SLIOT'26 (Semi-Finalist)",
+      problem: "Developed an IoT energy-management system to detect occupancy from CCTV feeds and trigger zone-based control of building appliances.",
+      features: [
+        "Occupancy detection from CCTV feeds using YOLOv8-n",
+        "Zone-based automated appliance control",
+        "Embedded integration with ESP32 and Arduino",
+        "React-based monitoring dashboard"
+      ],
+      techStack: "Python, OpenCV, YOLO-v8-n, Raspberry Pi, ESP32, Arduino, React",
+      liveLink: null,
+      githubLink: "https://github.com/Maleesha-K/EcoEYE",
+      linkedinLink: "https://lnkd.in/p/g8Exh9Jt",
+      status: "Completed",
+      type: "Group"
+    },
+    {
+      title: "RPAL Interpreter",
+      problem: "Implemented a complete 6-stage interpreter pipeline for RPAL.",
+      features: [
+        "Lexical analysis and tokenization",
+        "AST construction and standardization",
+        "CSE machine execution",
+        "Web-based interactive demo"
+      ],
+      techStack: "C++, Python, HTML/CSS, Render",
+      liveLink: "https://rpal-web.onrender.com",
+      githubLink: "https://github.com/bkpdesilva/proj-rpal",
+      linkedinLink: "https://lnkd.in/p/gJYTmKCX",
+      status: "Completed",
+      type: "Group"
+    },
+    {
+      title: "Draftly - Lawyer-in-the-Loop Legal Workflow Platform",
+      problem: "Legal workflow platform for Sri Lankan practice that turns unstructured client documents into a verified, evidence-linked matter record with deterministic checks, grounded legal search, and reviewable drafting. Supervised by Dr. Nisansa de Silva.",
+      features: [
+        "Document ingestion via Google Document AI",
+        "RAG-based grounded legal search",
+        "Deterministic compliance checks",
+        "Evidence-linked matter records",
+        "Local LLM-assisted drafting"
+      ],
+      techStack: "Google Document AI, RAG, NLP, Full-Stack Web, Local LLM",
+      liveLink: null,
+      githubLink: null,
+      linkedinLink: null,
+      status: "In Progress",
+      type: "Group"
+    },
+    {
+      title: "Flower Exchange - Order Matching Engine",
+      problem: "Trading exchange with a price-time-priority order matching engine and both CLI and web interfaces, built on SOLID design principles. Developed in a selective LSEG C++ workshop offered to 25 students from the batch.",
+      features: [
+        "Price-time-priority order matching engine",
+        "CLI and Web UI interfaces",
+        "REST API",
+        "Built on SOLID design principles"
+      ],
+      techStack: "C++17, OOP / SOLID, REST API, Web UI",
+      liveLink: null,
+      githubLink: "https://github.com/praveen-de-silva/Course_CPP_LSEG/tree/main/FP",
+      linkedinLink: null,
+      status: "Completed",
+      type: "Individual"
     },
     {
       title: "Driver Safety MS - SLIOT'25",
@@ -143,14 +211,21 @@ export default function Projects() {
                 <h2 className="text-2xl sm:text-2xl md:text-3xl font-light text-white">
                   {project.title}
                 </h2>
-                <span className={`px-2 py-0.5 sm:px-4 sm:py-1 rounded-full text-xs sm:text-sm font-light border ${
-                  project.status === 'Completed' 
-                    ? 'border-green-500 text-green-400 bg-gradient-to-r from-green-500/20 to-emerald-500/20' 
-                    : project.status === 'In Progress'
-                    ? 'border-orange-500 text-orange-400 bg-gradient-to-r from-orange-500/20 to-amber-500/20'
-                    : 'border-white border-opacity-20 text-white bg-white bg-opacity-10'
-                }`}>
-                  {project.status}
+                <span className="flex items-center gap-2 shrink-0">
+                  {project.type && (
+                    <span className="px-2 py-0.5 sm:px-4 sm:py-1 rounded-full text-xs sm:text-sm font-light border border-blue-500 text-blue-400 bg-gradient-to-r from-blue-500/20 to-cyan-500/20">
+                      {project.type}
+                    </span>
+                  )}
+                  <span className={`px-2 py-0.5 sm:px-4 sm:py-1 rounded-full text-xs sm:text-sm font-light border ${
+                    project.status === 'Completed'
+                      ? 'border-green-500 text-green-400 bg-gradient-to-r from-green-500/20 to-emerald-500/20'
+                      : project.status === 'In Progress'
+                      ? 'border-orange-500 text-orange-400 bg-gradient-to-r from-orange-500/20 to-amber-500/20'
+                      : 'border-white border-opacity-20 text-white bg-white bg-opacity-10'
+                  }`}>
+                    {project.status}
+                  </span>
                 </span>
               </div>
               

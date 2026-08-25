@@ -6,28 +6,46 @@ import FadeInSection from '@/components/FadeInSection';
 export default function Achievements() {
   const achievements = [
     {
-      name: "University Academic Achievements",
-      result: "Dean list",
-      context: "I could perform my academics to be in the Dean lists in semester 1, semester 2",
+      name: "Dean's List",
+      result: "2024 / 25",
+      context: "1st semester GPA: 4.00, 2nd semester GPA: 3.82 — University of Moratuwa.",
       linkedinLink: ""
     },
     {
-      name: "CodeAréna ’25",
+      name: "IEEEXtreme 19.0",
+      result: "Global Rank 68",
+      context: "Placed 68th globally among 19,000+ participants in IEEE's 24-hour programming competition.",
+      linkedinLink: ""
+    },
+    {
+      name: "CodeArena '25",
       result: "Finalist",
-      context: "This is a programing competition which was organized by KDU.",
+      context: "Finalist in the programming competition organized by KDU Sri Lanka.",
       linkedinLink: "https://www.linkedin.com/posts/praveen-de-silva-854a732a2_problemsolving-finalists-kdu-activity-7411004597332455424-UlYP?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEkg6AABOq2dXdWOGUX3vzM4-Jm8Pzn8mAg"
     },
     {
-      name: "Mini Xtream",
-      result: "Rank #9",
-      context: "This is a programing competition which had to be participated for all entire 200 of cse 23 students.",
+      name: "MiniXtreme Problem Solving Competition",
+      result: "9th Place",
+      context: "Top 10 of 200+ participants in the CSE'23 batch, University of Moratuwa.",
       linkedinLink: "https://www.linkedin.com/posts/praveen-de-silva-854a732a2_thrilled-to-have-placed-in-the-top-10-at-activity-7410997408609775616-IlwR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEkg6AABOq2dXdWOGUX3vzM4-Jm8Pzn8mAg"
     },
     {
-      name: "SLIOT '25",
+      name: "SLIOT Challenge 2025",
       result: "Finalist",
-      context: "This is a IOT based hackathon which was organized by cse batch of University of Moratuwa.",
+      context: "IoT hackathon organized by the CSE batch, University of Moratuwa.",
       linkedinLink: "https://www.linkedin.com/posts/thashira-devindu-49a1b6349_sliotchallenge2025-iot-sltmobitel-ugcPost-7309617829874434048-ljBo?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEkg6AABOq2dXdWOGUX3vzM4-Jm8Pzn8mAg"
+    },
+    {
+      name: "SLIOT Challenge 2026",
+      result: "Semi-Finalist",
+      context: "Semi-finalist in the IoT hackathon organized by the CSE batch, University of Moratuwa.",
+      linkedinLink: ""
+    },
+    {
+      name: "Mahapola Scholarship",
+      result: "Recipient",
+      context: "Awarded to Physical Science stream students, Kingswood College — 2022.",
+      linkedinLink: ""
     }
   ];
 
@@ -64,17 +82,19 @@ export default function Achievements() {
               </div>
 
               {/* LinkedIn Link */}
-              <div>
-                <a 
-                  href={achievement.linkedinLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-2 text-white font-light hover:text-gray-300 transition-colors"
-                >
-                  <Linkedin size={18} />
-                  <span>View on LinkedIn</span>
-                </a>
-              </div>
+              {achievement.linkedinLink && (
+                <div>
+                  <a
+                    href={achievement.linkedinLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 text-white font-light hover:text-gray-300 transition-colors"
+                  >
+                    <Linkedin size={18} />
+                    <span>View on LinkedIn</span>
+                  </a>
+                </div>
+              )}
               </div>
             </FadeInSection>
           ))}
