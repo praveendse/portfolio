@@ -1,14 +1,24 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import Image from 'next/image';
 import FadeInSection from '@/components/FadeInSection';
 import { motion, AnimatePresence } from 'framer-motion';
+
+const SLIDE_STORAGE_KEY = 'skills-current-slide';
 
 export default function Skills() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = 3;
+
+  useEffect(() => {
+    const saved = sessionStorage.getItem(SLIDE_STORAGE_KEY);
+    if (saved !== null) setCurrentSlide(Number(saved));
+  }, []);
+
+  useEffect(() => {
+    sessionStorage.setItem(SLIDE_STORAGE_KEY, String(currentSlide));
+  }, [currentSlide]);
 
   const skills = [
     {
@@ -51,10 +61,10 @@ export default function Skills() {
 
   const getSubtitle = () => {
     switch(currentSlide) {
-      case 0: return "Technical expertise and capabilities";
-      case 1: return "Academic journey and achievements";
-      case 2: return "Languages and interpersonal abilities";
-      default: return "Technical expertise and capabilities";
+      case 0: return "Academic journey and achievements";       // Education
+      case 1: return "Technical expertise and capabilities";   // Tech Skills
+      case 2: return "Languages and interpersonal abilities";  // Languages
+      default: return "Academic journey and achievements";
     }
   };
 
@@ -93,50 +103,12 @@ export default function Skills() {
           </div>
         </FadeInSection>
 
-        {/* Slide 1 - Technical Skills */}
-        <AnimatePresence mode="wait">
-          {currentSlide === 0 && (
-            <motion.div
-              key="slide-0"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="grid md:grid-cols-2 gap-8">
-                {skills.map((skillSet, index) => (
-                  <FadeInSection key={index} delay={index * 0.1}>
-                    <motion.div
-                      whileHover={{ scale: 1.02, y: -5 }}
-                      transition={{ duration: 0.3 }}
-                      className="bg-black bg-opacity-40 backdrop-blur-md rounded-lg p-8 shadow-xl shadow-white/20 hover:shadow-white/30 transition-all duration-300"
-                    >
-                      <h2 className="text-lg sm:text-xl md:text-2xl font-light mb-6 text-white border-b border-white border-opacity-20 pb-3">
-                        {skillSet.category}
-                      </h2>
-                      <div className="flex flex-wrap gap-3">
-                        {skillSet.items.map((skill, skillIndex) => (
-                          <motion.span 
-                            key={skillIndex}
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="px-4 py-2 bg-white/10 text-white rounded-full text-sm font-light hover:bg-white/20 transition-all duration-200 cursor-pointer"
-                          >
-                            {skill}
-                          </motion.span>
-                        ))}
-                      </div>
-                    </motion.div>
-                  </FadeInSection>
-                ))}
-              </div>
-            </motion.div>
-          )}
+       
 
-        {/* Slide 2 - Education */}
-        {currentSlide === 1 && (
+        {/* Slide 0 - Education */}
+        {currentSlide === 0 && (
           <motion.div
-            key="slide-1"
+            key="slide-0"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
@@ -159,7 +131,7 @@ export default function Skills() {
                 <h4 className="text-sm sm:text-base md:text-lg text-gray-300 mb-2">University of Moratuwa</h4>
                 <p className="text-gray-400 text-sm mb-3">Since March 2024</p>
                 <div className="space-y-2">
-                  {/* <p className="text-gray-300">CGPA: <span className="text-white font-normal">3.8</span></p> */}
+                  <p className="text-gray-300">CGPA: <span className="text-white font-normal">3.56</span></p>
                   <p className="text-gray-300">Dean's List: <span className="text-white font-normal">Semester 1, Semester 2</span></p>
                 </div>
               </div>
@@ -234,7 +206,47 @@ export default function Skills() {
           </motion.div>
         )}
 
-        {/* Slide 3 - Languages & Soft Skills */}
+         {/* Slide 1 - Technical Skills */}
+        <AnimatePresence mode="wait">
+          {currentSlide === 1 && (
+            <motion.div
+              key="slide-1"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="grid md:grid-cols-2 gap-8">
+                {skills.map((skillSet, index) => (
+                  <FadeInSection key={index} delay={index * 0.1}>
+                    <motion.div
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      transition={{ duration: 0.3 }}
+                      className="bg-black bg-opacity-40 backdrop-blur-md rounded-lg p-8 shadow-xl shadow-white/20 hover:shadow-white/30 transition-all duration-300"
+                    >
+                      <h2 className="text-lg sm:text-xl md:text-2xl font-light mb-6 text-white border-b border-white border-opacity-20 pb-3">
+                        {skillSet.category}
+                      </h2>
+                      <div className="flex flex-wrap gap-3">
+                        {skillSet.items.map((skill, skillIndex) => (
+                          <motion.span 
+                            key={skillIndex}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="px-4 py-2 bg-white/10 text-white rounded-full text-sm font-light hover:bg-white/20 transition-all duration-200 cursor-pointer"
+                          >
+                            {skill}
+                          </motion.span>
+                        ))}
+                      </div>
+                    </motion.div>
+                  </FadeInSection>
+                ))}
+              </div>
+            </motion.div>
+          )}
+
+        {/* Slide 2 - Languages & Soft Skills */}
         {currentSlide === 2 && (
           <motion.div
             key="slide-2"
@@ -262,10 +274,7 @@ export default function Skills() {
                         <span className="text-white font-light text-sm sm:text-base md:text-lg">{lang.name}</span>
                         {lang.duolingo && (
                           <div className="flex items-center gap-1 bg-white/10 px-3 py-1 rounded-full">
-                            <svg className="w-5 h-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                              <image href="https://design.duolingo.com/86230c9ad10d9f08b785.svg" width="24" height="24"/>
-                              <circle cx="12" cy="12" r="10" fill="none" stroke="#1CB0F6" strokeWidth="0.5" opacity="0"/>
-                            </svg>
+                            <span className="text-sm">🦉</span>
                             <span className="text-white font-light text-sm">Duolingo: {lang.duolingo}</span>
                           </div>
                         )}
@@ -274,7 +283,7 @@ export default function Skills() {
                     </div>
                     <div className="w-full bg-white/10 rounded-full h-3 overflow-hidden">
                       <div 
-                        className="bg-gradient-to-r from-gray via-gray-200 to-gray-400 h-3 rounded-full transition-all duration-1000 ease-out shadow-lg shadow-white/30"
+                        className="bg-gradient-to-r from-gray-500 via-gray-200 to-gray-400 h-3 rounded-full transition-all duration-1000 ease-out shadow-lg shadow-white/30"
                         style={{ width: currentSlide === 2 ? `${lang.level}%` : '0%' }}
                       ></div>
                     </div>

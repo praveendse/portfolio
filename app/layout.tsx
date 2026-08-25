@@ -3,6 +3,7 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
+import VantaBackground from "@/components/VantaBackground";
 
 export const metadata: Metadata = {
   title: "Praveen De Silva | Portfolio",
@@ -16,7 +17,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-gradient-to-br from-[#000B4F] via-[#000000] to-[#000B4F] text-white font-sans flex flex-col">
+      <body className="min-h-screen bg-[#000000] text-white font-sans flex flex-col">
+        <VantaBackground />
         <Navigation />
         <main className="flex-grow">
           <PageTransition>

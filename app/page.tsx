@@ -36,14 +36,14 @@ export default function Home() {
             {/* Right - About Me */}
             <FadeInSection delay={0.4}>
               <div className="relative h-[32rem] flex items-center justify-center">
-                <div className="bg-opacity-5 backdrop-blur-md rounded-lg p-8 border-opacity-20 w-full h-full flex flex-col justify-center">
+                <div className="bg-opacity-5 rounded-lg p-8 border-opacity-20 w-full h-full flex flex-col justify-center">
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-light text-white mb-6">About Me</h2>
                   <p className="text-sm sm:text-base md:text-lg text-gray-200 font-light leading-relaxed mb-4 text-justify">
-                    I'm a passionate computer science engineering undergraduate pursuing my BSc in Engineering, dedicated to innovation and creative problem-solving.
-                  </p>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-200 font-light leading-relaxed text-justify">
-                    Currently at University of Moratuwa, I combine academic excellence with practical experience.
-                  </p>
+                   Computer Science and Engineering undergraduate at the University of Moratuwa specializing in Data Science 
+                   and Engineering, with practical experience in Python, SQL, data analysis and machine learning. Experienced 
+                   in preparing and analyzing real-world datasets through research and data-driven projects, with a strong 
+                   interest in data engineering and AI-driven analytics.
+                  </p>              
                 </div>
               </div>
             </FadeInSection>
