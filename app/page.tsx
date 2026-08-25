@@ -2,6 +2,7 @@
 
 import FadeInSection from '@/components/FadeInSection';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -13,9 +14,12 @@ export default function Home() {
             {/* Left - Image, Header Content and Contact */}
             <FadeInSection delay={0.2}>
               <div className="flex flex-col items-center md:items-start text-center md:text-left">
-                <img
+                <Image
                   src="/images/profile-05.png"
                   alt="Praveen De Silva"
+                  width={288}
+                  height={288}
+                  priority
                   className="w-64 h-64 sm:w-72 sm:h-72 rounded-full object-cover border-2 border-white shadow-2xl mb-8"
                 />
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-2">

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { MessageCircle, Send, Linkedin, Github, Mail, Phone } from 'lucide-react';
+import { MessageCircle, Send, Linkedin, Github } from 'lucide-react';
 import FadeInSection from '@/components/FadeInSection';
 import { motion } from 'framer-motion';
 

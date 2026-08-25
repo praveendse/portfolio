@@ -7,14 +7,12 @@ import { useRef } from 'react';
 interface FadeInSectionProps {
   children: React.ReactNode;
   delay?: number;
-  direction?: 'up' | 'down' | 'left' | 'right';
   className?: string;
 }
 
-export default function FadeInSection({ 
-  children, 
-  delay = 0, 
-  direction = 'up',
+export default function FadeInSection({
+  children,
+  delay = 0,
   className = ''
 }: FadeInSectionProps) {
   const ref = useRef(null);

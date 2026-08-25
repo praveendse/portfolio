@@ -8,13 +8,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 const SLIDE_STORAGE_KEY = 'skills-current-slide';
 
 export default function Skills() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 3;
-
-  useEffect(() => {
+  const [currentSlide, setCurrentSlide] = useState(() => {
+    if (typeof window === 'undefined') return 0;
     const saved = sessionStorage.getItem(SLIDE_STORAGE_KEY);
-    if (saved !== null) setCurrentSlide(Number(saved));
-  }, []);
+    return saved !== null ? Number(saved) : 0;
+  });
+  const totalSlides = 3;
 
   useEffect(() => {
     sessionStorage.setItem(SLIDE_STORAGE_KEY, String(currentSlide));
@@ -132,7 +131,7 @@ export default function Skills() {
                 <p className="text-gray-400 text-sm mb-3">Since March 2024</p>
                 <div className="space-y-2">
                   <p className="text-gray-300">CGPA: <span className="text-white font-normal">3.56</span></p>
-                  <p className="text-gray-300">Dean's List: <span className="text-white font-normal">Semester 1, Semester 2</span></p>
+                  <p className="text-gray-300">Dean&apos;s List: <span className="text-white font-normal">Semester 1, Semester 2</span></p>
                 </div>
               </div>
               </motion.div>
