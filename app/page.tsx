@@ -29,11 +29,19 @@ export default function Home() {
                   Bsc Eng (hons) - University of Moratuwa (UG)
                 </p>
 
-                <Link href="/contact">
-                  <button className="px-8 py-3 border border-white rounded-full hover:bg-white hover:text-black transition-all duration-300 font-light">
-                    Contact Me
-                  </button>
-                </Link>
+                <div className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-4">
+                  <Link href="/contact">
+                    <button className="w-40 px-8 py-3 border border-[#415a77] bg-[#415a77]/30 rounded-full hover:bg-[#415a77]/50 hover:border-[#415a77] transition-all duration-300 font-light text-white shadow-lg shadow-[#415a77]/30">
+                      Contact Me
+                    </button>
+                  </Link>
+
+                  <a href="/CV/my_cv.pdf" target="_blank" rel="noopener noreferrer" download>
+                    <button className="w-40 px-8 py-3 border border-[#415a77] bg-[#415a77]/30 rounded-full hover:bg-[#415a77]/50 hover:border-[#415a77] transition-all duration-300 font-light text-white shadow-lg shadow-[#415a77]/30">
+                      Get CV
+                    </button>
+                  </a>
+                </div>
               </div>
             </FadeInSection>
 
