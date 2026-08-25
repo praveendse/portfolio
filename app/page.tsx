@@ -43,10 +43,7 @@ export default function Home() {
                 <div className="bg-opacity-5 rounded-lg p-8 border-opacity-20 w-full h-full flex flex-col justify-center">
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-light text-white mb-6">About Me</h2>
                   <p className="text-sm sm:text-base md:text-lg text-gray-200 font-light leading-relaxed mb-4 text-justify">
-                   Computer Science and Engineering undergraduate at the University of Moratuwa specializing in Data Science 
-                   and Engineering, with practical experience in Python, SQL, data analysis and machine learning. Experienced 
-                   in preparing and analyzing real-world datasets through research and data-driven projects, with a strong 
-                   interest in data engineering and AI-driven analytics.
+                   Computer Science and Engineering undergraduate at the University of Moratuwa specializing in Data Science and Engineering, with experience in Python, SQL, machine learning, and data analytics.
                   </p>              
                 </div>
               </div>
