@@ -31,7 +31,7 @@ export default function Navigation() {
       {/* Navigation */}
       <nav className="relative px-6 py-6 flex items-center justify-between">
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-30"></div>
-        <Link href="/" className="text-2xl font-light hover:text-white transition-colors">
+        <Link href="/" className="text-lg sm:text-2xl font-light hover:text-white transition-colors">
           Portfolio
         </Link>
         
@@ -97,7 +97,7 @@ export default function Navigation() {
         initial={{ x: '100%' }}
         animate={{ x: isMenuOpen ? 0 : '100%' }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="fixed top-0 right-0 h-full w-64 z-50 bg-gradient-to-br from-[#415a77] via-[#000000] to-[#000000] border-l border-white border-opacity-20 md:hidden"
+        className="fixed top-0 right-0 h-full w-64 z-50 bg-gradient-to-br from-[#415a77]/70 via-[#000000] to-[#000000] border-l border-white/10 md:hidden"
       >
         <div className="flex flex-col h-full">
           {/* Close Button */}

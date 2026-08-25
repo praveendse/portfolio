@@ -26,7 +26,10 @@ export default function Home() {
                   Praveen De Silva
                 </h1>
                 <p className="text-xs sm:text-sm md:text-base lg:text-lg font-light text-pink-200 mb-8">
-                  Bsc Eng (hons) - University of Moratuwa (UG)
+                  BSc Eng (Hons) in CSE undergraduate <br />
+                  <em>Specialized in DSE</em> <br />
+                  University of Moratuwa
+
                 </p>
 
                 <div className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-4">
