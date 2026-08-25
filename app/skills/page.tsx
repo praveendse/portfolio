@@ -105,6 +105,7 @@ export default function Skills() {
        
 
         {/* Slide 0 - Education */}
+        <AnimatePresence mode="wait">
         {currentSlide === 0 && (
           <motion.div
             key="slide-0"
@@ -206,7 +207,6 @@ export default function Skills() {
         )}
 
          {/* Slide 1 - Technical Skills */}
-        <AnimatePresence mode="wait">
           {currentSlide === 1 && (
             <motion.div
               key="slide-1"
