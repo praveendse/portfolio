@@ -49,14 +49,20 @@ export default function Navigation() {
           >
             SKILLS
           </Link>
-          <Link 
-            href="/projects" 
+          <Link
+            href="/projects"
             className={`hover:text-white transition-colors ${isActive('/projects') ? 'border-b border-white pb-1' : ''}`}
           >
             PROJECTS
           </Link>
-          <Link 
-            href="/achievements" 
+          <Link
+            href="/research"
+            className={`hover:text-white transition-colors ${isActive('/research') ? 'border-b border-white pb-1' : ''}`}
+          >
+            RESEARCH
+          </Link>
+          <Link
+            href="/achievements"
             className={`hover:text-white transition-colors ${isActive('/achievements') ? 'border-b border-white pb-1' : ''}`}
           >
             ACHIEVEMENTS
@@ -109,8 +115,8 @@ export default function Navigation() {
           
           {/* Menu Links */}
           <div className="flex flex-col space-y-6 px-8 pt-8">
-            {['/', '/skills', '/projects', '/achievements', '/contact'].map((path, index) => {
-              const labels = ['HOME', 'SKILLS', 'PROJECTS', 'ACHIEVEMENTS', 'CONTACT'];
+            {['/', '/skills', '/projects', '/research', '/achievements', '/contact'].map((path, index) => {
+              const labels = ['HOME', 'SKILLS', 'PROJECTS', 'RESEARCH', 'ACHIEVEMENTS', 'CONTACT'];
               return (
                 <motion.div
                   key={path}
@@ -136,7 +142,7 @@ export default function Navigation() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 p-4 bg-opacity-0.1 backdrop-blur-md rounded-full border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 shadow-lg shadow-white/10 group"
+          className="fixed bottom-8 right-8 z-50 p-4 border border-[#415a77] bg-[#415a77]/30 backdrop-blur-md rounded-full hover:bg-[#415a77]/50 hover:border-[#415a77] transition-all duration-300 shadow-lg shadow-[#415a77]/30 group"
           aria-label="Scroll to top"
         >
           <ArrowUp size={24} className="group-hover:-translate-y-1 transition-transform duration-300" />
