@@ -29,12 +29,9 @@ export default function Navigation() {
   return (
     <>
       {/* Navigation */}
-      <nav className="relative px-6 py-6 flex items-center justify-between">
+      <nav className="relative px-6 py-6 flex items-center justify-center">
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-30"></div>
-        <Link href="/" className="text-lg sm:text-2xl font-light hover:text-white transition-colors">
-          Portfolio
-        </Link>
-        
+
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           <Link 
@@ -50,16 +47,10 @@ export default function Navigation() {
             SKILLS
           </Link>
           <Link
-            href="/projects"
-            className={`hover:text-white transition-colors ${isActive('/projects') ? 'border-b border-white pb-1' : ''}`}
+            href="/work"
+            className={`hover:text-white transition-colors ${isActive('/work') ? 'border-b border-white pb-1' : ''}`}
           >
-            PROJECTS
-          </Link>
-          <Link
-            href="/research"
-            className={`hover:text-white transition-colors ${isActive('/research') ? 'border-b border-white pb-1' : ''}`}
-          >
-            RESEARCH
+            WORK
           </Link>
           <Link
             href="/achievements"
@@ -67,8 +58,14 @@ export default function Navigation() {
           >
             ACHIEVEMENTS
           </Link>
-          <Link 
-            href="/contact" 
+          <Link
+            href="/activities"
+            className={`hover:text-white transition-colors ${isActive('/activities') ? 'border-b border-white pb-1' : ''}`}
+          >
+            ACTIVITIES
+          </Link>
+          <Link
+            href="/contact"
             className={`hover:text-white transition-colors ${isActive('/contact') ? 'border-b border-white pb-1' : ''}`}
           >
             CONTACT
@@ -76,8 +73,8 @@ export default function Navigation() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden"
+        <button
+          className="md:hidden absolute right-6 top-1/2 -translate-y-1/2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -115,8 +112,8 @@ export default function Navigation() {
           
           {/* Menu Links */}
           <div className="flex flex-col space-y-6 px-8 pt-8">
-            {['/', '/skills', '/projects', '/research', '/achievements', '/contact'].map((path, index) => {
-              const labels = ['HOME', 'SKILLS', 'PROJECTS', 'RESEARCH', 'ACHIEVEMENTS', 'CONTACT'];
+            {['/', '/skills', '/work', '/achievements', '/activities', '/contact'].map((path, index) => {
+              const labels = ['HOME', 'SKILLS', 'WORK', 'ACHIEVEMENTS', 'ACTIVITIES', 'CONTACT'];
               return (
                 <motion.div
                   key={path}

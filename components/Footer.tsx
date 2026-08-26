@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-30"></div>
       <div className="container mx-auto text-center">
         <p className="text-sm font-light text-gray-300 opacity-50">
-          Praveen | December 2025
+          Last update on August 2026
         </p>
       </div>
     </footer>

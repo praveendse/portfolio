@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { MessageCircle, Send, Linkedin, Github } from 'lucide-react';
+import { MessageCircle, Send, Linkedin, Github, Calendar } from 'lucide-react';
+import Link from 'next/link';
 import FadeInSection from '@/components/FadeInSection';
 import { motion } from 'framer-motion';
 
@@ -183,7 +184,7 @@ export default function Contact() {
               <div className="space-y-4 font-light">
                 <div>
                   <h3 className="text-sm text-gray-400 mb-1">Email</h3>
-                  <p className="text-white">desilvabkp@gmail.com</p>
+                  <p className="text-white">praveend.23@cse.mrt.ac.lk</p>
                 </div>
                 <div>
                   <h3 className="text-sm text-gray-400 mb-1">Phone</h3>
@@ -237,7 +238,7 @@ export default function Contact() {
                 <motion.a
                   whileHover={{ scale: 1.15, rotate: 5 }}
                   whileTap={{ scale: 0.95 }}
-                  href="https://github.com/praveen-de-silva"
+                  href="https://github.com/bkpdesilva"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300"
@@ -245,6 +246,15 @@ export default function Contact() {
                 >
                   <Github size={28} className="text-white" />
                 </motion.a>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-white border-opacity-20 flex justify-center">
+                <Link href="/calendar">
+                  <button className="px-8 py-3 border border-white rounded-full transition-all duration-300 font-light flex items-center gap-2 hover:bg-white hover:text-black">
+                    <Calendar size={18} />
+                    See Calendar
+                  </button>
+                </Link>
               </div>
             </div>
           </FadeInSection>
