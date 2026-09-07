@@ -65,6 +65,12 @@ export default function Navigation() {
             ACTIVITIES
           </Link>
           <Link
+            href="/learn"
+            className={`hover:text-white transition-colors ${isActive('/learn') ? 'border-b border-white pb-1' : ''}`}
+          >
+            LEARN
+          </Link>
+          <Link
             href="/contact"
             className={`hover:text-white transition-colors ${isActive('/contact') ? 'border-b border-white pb-1' : ''}`}
           >
@@ -112,8 +118,8 @@ export default function Navigation() {
           
           {/* Menu Links */}
           <div className="flex flex-col space-y-6 px-8 pt-8">
-            {['/', '/skills', '/work', '/achievements', '/activities', '/contact'].map((path, index) => {
-              const labels = ['HOME', 'SKILLS', 'WORK', 'ACHIEVEMENTS', 'ACTIVITIES', 'CONTACT'];
+            {['/', '/skills', '/work', '/achievements', '/activities', '/learn', '/contact'].map((path, index) => {
+              const labels = ['HOME', 'SKILLS', 'WORK', 'ACHIEVEMENTS', 'ACTIVITIES', 'LEARN', 'CONTACT'];
               return (
                 <motion.div
                   key={path}

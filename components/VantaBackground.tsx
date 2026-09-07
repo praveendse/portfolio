@@ -1,14 +1,18 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 
 type VantaEffect = { destroy: () => void };
 
 export default function VantaBackground() {
   const vantaRef = useRef<HTMLDivElement>(null);
   const effectRef = useRef<VantaEffect | null>(null);
+  const pathname = usePathname();
+  const disabled = pathname?.startsWith('/learn') ?? false;
 
   useEffect(() => {
+    if (disabled) return;
     let cancelled = false;
 
     Promise.all([import('three'), import('vanta/dist/vanta.waves.min')])
@@ -40,7 +44,17 @@ export default function VantaBackground() {
       effectRef.current?.destroy();
       effectRef.current = null;
     };
-  }, []);
+  }, [disabled]);
+
+  if (disabled) {
+    return (
+      <div
+        className="fixed inset-0 -z-10"
+        style={{ background: 'linear-gradient(160deg, #415a77 0%, #000000 100%)' }}
+        aria-hidden="true"
+      />
+    );
+  }
 
   return (
     <>
