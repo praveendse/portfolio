@@ -1,4 +1,4 @@
----
+![1788743962599](image/dwh-study-notes/1788743962599.png)---
 title: "Data Warehouse Modeling"
 description: "Study notes on DW characteristics, OLTP vs OLAP, multidimensional models, and OLAP operations"
 date: "2026-09-06"

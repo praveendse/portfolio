@@ -72,9 +72,9 @@ export default function Skills() {
   };
 
   return (
-    <div className="container mx-auto px-6 pt-20 pb-16 relative">
+    <div className="container mx-auto px-6 pt-10 pb-16 relative">
       {/* Slider Controls - Fixed Position */}
-      <div className="absolute top-10 right-6 flex items-center space-x-4 text-lg z-10">
+      <div className="absolute top-4 right-6 flex items-center space-x-4 text-lg z-10">
         <button onClick={prevSlide} className="hover:text-white transition-colors">
           <ChevronLeft size={24} />
         </button>
